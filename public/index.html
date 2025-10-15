@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>File Share Prototype</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Login/Register Modal -->
+<div id="loginModal" class="modal" style="display:block;">
+  <div class="modal-content">
+    <h2>Login / Register</h2>
+    <form id="authForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <label><input type="checkbox" id="remember" /> Remember Me</label>
+      <button type="submit"><span>Login/Register</span></button>
+    </form>
+    <div id="authMessage" class="message"></div>
+  </div>
+</div>
+
+<!-- Main upload container -->
+<div class="container">
+  <div style="display: flex; justify-content: flex-end;">
+    <button id="logoutBtn" style="display:none;"><span>Logout</span></button>
+  </div>
+  <h2>Upload Files/Folders</h2>
+
+  <label for="accessMode">Access Mode:</label>
+  <select id="accessMode">
+    <option value="private">Private</option>
+    <option value="public" selected>Public</option>
+    <option value="testing">In Testing</option>
+  </select>
+
+  <input type="file" id="fileInput" style="display: none;" multiple webkitdirectory />
+  <button id="chooseFileBtn">Choose File or Folder</button>
+  <button id="uploadBtn" disabled><span>Upload</span></button>
+  <div id="uploadMessage" class="message"></div>
+
+  <!-- Shared Files list -->
+  <h3>Shared Files</h3>
+  <div id="sharedLinks"></div>
+</div>
+
+<!-- Info Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modalMessage"></p>
+    <button id="modalCloseBtn">OK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
